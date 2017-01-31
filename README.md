@@ -1,4 +1,4 @@
-# React Calculator 
+# React Calculator
 
 Tonight you will be building a calculator with React. At first your calculator will just add 2 numbers together when they are typed in. For the bonus, we might get more creative.
 
@@ -20,10 +20,11 @@ Fork and clone the homework repo like always. Run ```npm install``` from the com
       <h3>Addition results go here!</h3>
     </div>
   </div>
-  
+
   ```
 
 2. Set up the initial state of your component. What state will you need to track? What values should those state items start with? Where is that state printed to the browser?
+
 3. You will need to figure out how and when you want to listen for an event to trigger a calculation. Is it a click event, a submit event...? It's up to you to figure out what event you want to listen for, on which elements, and why. Here is a [list of events React supports](https://facebook.github.io/react/docs/events.html#supported-events) and [how to listen for them](https://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html).
 4. Once you know what event to listen for, you'll need to create a method that accepts the triggered event, gets the input values from your form, adds them together, and sets the state of the new `sum`.
     - **thought**: how will you handle inputs that aren't numbers?
