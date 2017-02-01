@@ -11,7 +11,7 @@ class Calculator extends Component {
   };
 
   add() {
-    var sum = (parseInt(this.refs.val1.value) || 0) + (parseInt(this.refs.val2.value) || 0);
+    var sum = (parseInt(this.refs.val1.value, 10) || 0) + (parseInt(this.refs.val2.value,10) || 0);
 
     this.setState({
       sum: sum
