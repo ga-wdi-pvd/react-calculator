@@ -7,28 +7,32 @@ class Calculator extends Component {
     this.state = {
       value1: '',
       value2: '',
-      operation: '',
       total: 0
     };
   }
 
   handleValue1(event){
     this.setState({
-      value1: parseInt(event.target.value)
+      value1: event.target.value
     })
   }
 
   handleValue2(event){
     this.setState({
-      value2: parseInt(event.target.value)
+      value2: event.target.value
     })
   }
 
   handleSubmit(event){
+    this.setState({
+      total: 0
+    })
     event.preventDefault();
     console.log('calculating...');
-    console.log(Number.isInteger(this.state.value1));
-    console.log(Number.isInteger(this.state.value2));
+    var total = parseInt(this.state.value1) + parseInt(this.state.value2)
+    this.setState({
+      total: total
+    })
   }
 
   render() {
@@ -37,14 +41,10 @@ class Calculator extends Component {
         <h1>its working!</h1>
         <form onSubmit={(event) => {this.handleSubmit(event)}}>
           <input onChange={(event) => {this.handleValue1(event)}} type="text" name="value1" />
-            <select>
-              <option value="*">x</option>
-              <option value="+">+</option>
-              <option value="-">-</option>
-              <option value="/">÷</option>
-            </select>
+          <h4>+</h4>
           <input onChange={(event) => {this.handleValue2(event)}} type="text" name="value2" />
           <button type="submit">Calculate</button>
+          <h1>{this.state.total}</h1>
         </form>
       </div>
     );
