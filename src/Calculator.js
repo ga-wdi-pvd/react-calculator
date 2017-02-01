@@ -11,11 +11,16 @@ class Calculator extends Component {
     };
   }
 
+  handleSubmit(event){
+    event.preventDefault();
+    console.log('calculating...');
+  }
+
   render() {
     return (
       <div>
         <h1>its working!</h1>
-        <form className="" action="index.html" method="post">
+        <form onSubmit={(event) => {this.handleSubmit(event)}}>
           <input type="text" name="value1" />
             <select>
               <option value="*">x</option>
